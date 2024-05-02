@@ -16,3 +16,23 @@ export default function ImageViewer({closeImage,imageData}:{
         </motion.div>
     )
 }
+
+export function SkillViewer({closeViewer,description,skill}:{
+    skill: string,
+    description: string,
+    closeViewer: ()=>void
+}){
+    return(
+        <motion.div
+            initial={{scale:0,opacity:0}}
+            animate={{scale:skill===""? 0 : 1,opacity: skill===""? 0 : 1}}
+            transition={{duration:.3}}
+            onClick={closeViewer}
+            className="fixed bg-gray-300/50 top-0 left-0 z-[200] w-full h-[100vh] flex items-center" 
+        >
+            <p>{skill}</p>
+            DICKSS
+            <p>{description}</p>
+        </motion.div>
+    )
+}
