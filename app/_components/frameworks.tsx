@@ -13,9 +13,8 @@ export default function Skills(){
     const frameEle = "w-fit px-3 py-2 m-2 bg-emerald-100 shadow shadow-md shadow-emerald-300 hover:bg-emerald-200 hover:rounded-md cursor-pointer duration-300";
     const otherEle = "w-fit px-3 py-2 m-2 bg-purple-100 shadow shadow-md shadow-purple-300 hover:bg-purple-200 hover:rounded-md cursor-pointer duration-300";
 
-  const { scrollYProgress } = useScroll();
     return(
-        <motion.div id="skills" className="p-10" style={{ scaleX: scrollYProgress }}>
+        <motion.div id="skills" className="p-10">
             <motion.h1 
                 className="text-3xl block text-center text-white p-3 my-5 rounded-md bg-gradient-to-br from-gray-800/80 to-gray-900/80 duration-300">
                     Skills (Draggable)
