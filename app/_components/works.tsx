@@ -155,8 +155,8 @@ function EachWork({description,githubLink,img_url,usedLanguages,liveLink,name,op
                 )}
             </motion.div>
             <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 mb-2 mt-5 lg:pl-10">
-                <Link target="_blank" className="md:w-full w-[75%] mx-auto md:text-[18px] text-xs inline-block lg:py-2 p-1 py-[3px] text-center text-white bg-gradient-to-r hover:bg-gradient-to-l from-red-500 to-red-600 rounded-md hover:shadow-md hover:shadow-red-600 duration-300" href={githubLink} children="Github"/>
-                <Link target="_blank" className="md:w-full w-[75%] mx-auto md:text-[18px] text-xs inline-block lg:py-2 p-1 py-[3px] text-center text-black bg-gradient-to-r hover:bg-gradient-to-l from-cyan-400 to-cyan-500 rounded-md hover:shadow-md hover:shadow-cyan-600 duration-300" href={liveLink} children="Live"/>
+                <Link target="_blank" className="md:w-full w-[75%] mx-auto md:text-[18px] text-xs inline-block lg:py-2 p-1 py-[3px] text-center text-white bg-gradient-to-r hover:bg-gradient-to-l from-red-500 to-red-600 rounded-md hover:shadow-md hover:shadow-red-600 duration-300" href={githubLink} >Github</Link>
+                <Link target="_blank" className="md:w-full w-[75%] mx-auto md:text-[18px] text-xs inline-block lg:py-2 p-1 py-[3px] text-center text-black bg-gradient-to-r hover:bg-gradient-to-l from-cyan-400 to-cyan-500 rounded-md hover:shadow-md hover:shadow-cyan-600 duration-300" href={liveLink} >Live</Link>
             </div>
         </motion.div>
     )

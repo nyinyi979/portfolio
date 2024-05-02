@@ -11,15 +11,13 @@ export default function Footer(){
             </motion.h1>
             <div className=" grid grid-cols-2 gap-3">
                 <Link 
-                children="Github"
-                className="w-full p-4 bg-gray-300 hover:bg-gray-400 text-black"
-                href={"https://github.com/nyinyi979"}
-                />
+                  className="w-full p-4 bg-gray-300 hover:bg-gray-400 text-black"
+                  href={"https://github.com/nyinyi979"}
+                >Github</Link>
                 <Link 
-                children="Twitter"
-                className="w-full p-4 bg-gray-300 hover:bg-gray-400 text-black"
-                href={"https://twitter.com/TheZett04"}
-                />
+                  className="w-full p-4 bg-gray-300 hover:bg-gray-400 text-black"
+                  href={"https://twitter.com/TheZett04"}
+                >Twitter</Link>
             </div>
         </motion.div>
     )
