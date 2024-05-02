@@ -103,7 +103,7 @@ export default function Works(){
                 className="text-3xl block text-center text-white p-3 my-5 rounded-md bg-gradient-to-br from-gray-800/80 to-gray-900/80 duration-300">
                     My Works (Draggable)
             </motion.h1>
-            <div className="grid lg:grid-cols-3 grid-cols-2 gap-4">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
                 {works.current.map((work)=>
                     <EachWork open={open} setOpen={setOpen} key={work.name} {...work}/>
                 )}
