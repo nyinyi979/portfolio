@@ -100,7 +100,7 @@ export default function Works(){
     return(
         <div id="works" className="p-10">
             <motion.h1 
-                className="text-3xl block text-center text-white p-3 my-5 rounded-md bg-gradient-to-br from-gray-800/80 to-gray-900/80 duration-300">
+                className="lg:text-3xl text-2xl block text-center text-white p-3 my-5 rounded-md bg-gradient-to-br from-gray-800/80 to-gray-900/80 duration-300">
                     My Works (Draggable)
             </motion.h1>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
@@ -155,8 +155,8 @@ function EachWork({description,githubLink,img_url,usedLanguages,liveLink,name,op
                 )}
             </motion.div>
             <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 mb-2 mt-5 lg:pl-10">
-                <Link target="_blank" className="md:w-full w-[75%] mx-auto md:text-[18px] text-xs inline-block lg:py-2 p-1 py-[3px] text-center text-white bg-gradient-to-r hover:bg-gradient-to-l from-red-500 to-red-600 rounded-md hover:shadow-md hover:shadow-red-600 duration-300" href={githubLink} >Github</Link>
-                <Link target="_blank" className="md:w-full w-[75%] mx-auto md:text-[18px] text-xs inline-block lg:py-2 p-1 py-[3px] text-center text-black bg-gradient-to-r hover:bg-gradient-to-l from-cyan-400 to-cyan-500 rounded-md hover:shadow-md hover:shadow-cyan-600 duration-300" href={liveLink} >Live</Link>
+                <Link target="_blank" className="md:w-full w-[75%] mx-auto md:text-[18px] text-xs inline-block lg:py-2 p-1 py-[5px] text-center text-white bg-gradient-to-r hover:bg-gradient-to-l from-red-500 to-red-600 rounded-md hover:shadow-md hover:shadow-red-600 duration-300" href={githubLink} >Github</Link>
+                <Link target="_blank" className="md:w-full w-[75%] mx-auto md:text-[18px] text-xs inline-block lg:py-2 p-1 py-[5px] text-center text-black bg-gradient-to-r hover:bg-gradient-to-l from-cyan-400 to-cyan-500 rounded-md hover:shadow-md hover:shadow-cyan-600 duration-300" href={liveLink} >Live</Link>
             </div>
         </motion.div>
     )

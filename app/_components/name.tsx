@@ -7,18 +7,18 @@ export default function Name(){
             <motion.div animate={{translateY:[-40,0],opacity:[0,1]}} className="sticky top-0 text-white shadow-sm shadow-gray-200 bg-black/30 px-4 py-5 z-[100]">
                 <Link 
                   href={"/"}
-                  className="p-2 text-2xl border border-gray-400 w-fit hover:text-black hover:bg-white duration-300 cursor-pointer active:scale-95">
+                  className="p-2 lg:text-2xl text-xl border border-gray-400 w-fit hover:text-black hover:bg-white duration-300 cursor-pointer active:scale-95">
                     Portfolio
                 </Link>
                 <div className="float-right flex gap-4">
                     <Link 
                     href={"/#works"}
-                    className="p-1 text-xl border border-gray-400 w-fit hover:text-black hover:bg-white duration-300 cursor-pointer active:scale-95">
+                    className="p-1 lg:text-xl text-lg border border-gray-400 w-fit hover:text-black hover:bg-white duration-300 cursor-pointer active:scale-95">
                         Works
                     </Link>
                     <Link 
                     href={"/#skills"}
-                    className="p-1 text-xl border border-gray-400 w-fit hover:text-black hover:bg-white duration-300 cursor-pointer active:scale-95">
+                    className="p-1 lg:text-xl text-lg border border-gray-400 w-fit hover:text-black hover:bg-white duration-300 cursor-pointer active:scale-95">
                         Skills
                     </Link>
                 </div>

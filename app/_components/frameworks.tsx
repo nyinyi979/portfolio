@@ -1,6 +1,6 @@
 "use client"
 import React from "react"
-import {motion, useScroll} from "framer-motion";
+import {motion} from "framer-motion";
 export default function Skills(){
     const skills = React.useRef({
         frontEnd: ["HTML","CSS","SCSS","Javascript","Typescript","React","React native"],
@@ -16,7 +16,7 @@ export default function Skills(){
     return(
         <motion.div id="skills" className="p-10">
             <motion.h1 
-                className="text-3xl block text-center text-white p-3 my-5 rounded-md bg-gradient-to-br from-gray-800/80 to-gray-900/80 duration-300">
+                className="lg:text-3xl text-2xl block text-center text-white p-3 my-5 rounded-md bg-gradient-to-br from-gray-800/80 to-gray-900/80 duration-300">
                     Skills (Draggable)
             </motion.h1>
             <h2 className="text-2xl text-underline text-blue-500">Front end</h2>
