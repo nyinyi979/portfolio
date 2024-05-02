@@ -23,7 +23,9 @@ export default function Name(){
                     </Link>
                 </div>
             </motion.div>
-            <motion.div>
+            <motion.div
+              whileInView={{translateY:[40,0],translateX:[-20,0,20,0],scale:[.8,1]}}
+            >
                 <h1 className="text-4xl text-center text-white py-32 my-20">
                     I am <span className="underline text-cyan-500 underline-offset-8 hover:underline-offset-[20px] duration-300 cursor-pointer">a web/app developer.</span>         
                 </h1>

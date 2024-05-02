@@ -13,9 +13,21 @@ import BLOG_APP_SERVER from "./image/blog_app_server.png"
 import UI_MOCKUP from "./image/ui_mockup.png"
 import CHARTS from "./image/charts.png"
 import WEATHER_APP from "./image/weather_app.png"
+import ImageViewer from "./img_viewer";
 
 export default function Works(){
     const [open, setOpen] = React.useState(false);
+    const [imageOpen, setImageOpen] = React.useState<StaticImageData|"">("");
+
+    const openImage = (img: StaticImageData) =>{
+        document.body.style.overflow = "hidden";
+        setImageOpen(img);
+    }
+    const closeImage = () => {
+        document.body.style.overflow = "auto";
+        setImageOpen("");
+    }
+
     const works = React.useRef([
         {name: "TCDL",
         date: "December 2023",
@@ -98,21 +110,27 @@ export default function Works(){
         description: "UI Mockup app with a lot of pictures. Focused on animation"},
     ])
     return(
-        <div id="works" className="p-10">
-            <motion.h1 
-                className="lg:text-3xl text-2xl block text-center text-white p-3 my-5 rounded-md bg-gradient-to-br from-gray-800/80 to-gray-900/80 duration-300">
-                    My Works (Draggable)
-            </motion.h1>
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
-                {works.current.map((work)=>
-                    <EachWork open={open} setOpen={setOpen} key={work.name} {...work}/>
-                )}
-            </div>
-        </div>
+        <>
+            <ImageViewer closeImage={closeImage} imageData={imageOpen}/>
+            <motion.div 
+              whileInView={{translateY:[40,0],scale:[.8,1]}}
+              id="works" className="p-10">
+                <motion.h1 
+                    onClick={()=>setOpen(!open)}
+                    className="lg:text-3xl text-2xl cursor-pointer block text-center text-white p-3 my-5 rounded-md bg-gradient-to-br from-gray-800/80 to-gray-900/80 hover:to-gray-900/90 duration-300">
+                        My Works 
+                </motion.h1>
+                <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+                    {works.current.map((work)=>
+                        <EachWork open={open} setOpen={setOpen} key={work.name} openImage={openImage} {...work}/>
+                    )}
+                </div>
+            </motion.div>
+        </>
     )
 }
 
-function EachWork({description,githubLink,img_url,usedLanguages,liveLink,name,open,setOpen}:{name: string;
+function EachWork({description,githubLink,img_url,usedLanguages,liveLink,name,open,setOpen,openImage}:{name: string;
     date: string;
     img_url: StaticImageData;
     githubLink: string;
@@ -120,19 +138,19 @@ function EachWork({description,githubLink,img_url,usedLanguages,liveLink,name,op
     usedLanguages: string[];
     description: string;
     open: boolean,
-    setOpen: Dispatch<SetStateAction<boolean>>
+    setOpen: Dispatch<SetStateAction<boolean>>,
+    openImage: (img: StaticImageData)=>void
 }){
     return(
         <motion.div 
           onClick={()=>setOpen(!open)}
+          whileInView={{scale:[1.5,1]}}
           animate={{opacity:[0,1]}}
-          drag={true}
-          dragConstraints={{left:20,right:20,top:20,bottom:20}}
           className="w-full py-5 px-2 rounded-md bg-gradient-to-br from-gray-700/50 to-gray-800/50 shadow-md shadow-gray-600 hover:shadow-xl duration-300"
         >
             <h1 className="text-xl text-center text-white">{name}</h1>
             <div className="w-[80%] h-fit rounded-md shadow-sm shadow-gray-200 mx-auto my-3">
-                <Image alt={img_url.src} src={img_url} className="bg-cover hover:scale-105 duration-300 rounded-md border border-gray-700 shadow-md"/>
+                <Image onClick={(e)=>{e.stopPropagation();openImage(img_url)}} alt={img_url.src} src={img_url} className="bg-cover hover:scale-105 duration-300 rounded-md border border-gray-700 shadow-md"/>
             </div>
             <motion.div
                 initial={{opacity:0}}
@@ -149,7 +167,7 @@ function EachWork({description,githubLink,img_url,usedLanguages,liveLink,name,op
                 className="flex flex-wrap md:justify-normal justify-center gap-3 my-2"
             >
                 {usedLanguages.map((lang)=>
-                    <div key={lang} className="border text-white border-cyan-300 hover:bg-cyan-300 duration-300 md:px-2 p-1 w-fit cursor-pointer">
+                    <div key={lang} className="border text-white hover:text-black border-cyan-300 hover:bg-cyan-300 duration-300 md:px-2 p-1 w-fit cursor-pointer">
                         {lang}
                     </div>
                 )}
