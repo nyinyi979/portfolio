@@ -117,7 +117,7 @@ export default function Works(){
               id="works" className="p-10">
                 <motion.h1 
                     onClick={()=>setOpen(!open)}
-                    className="lg:text-3xl text-2xl cursor-pointer block text-center text-white p-3 my-5 rounded-md bg-gradient-to-br from-gray-800/80 to-gray-900/80 hover:to-gray-900/90 duration-300">
+                    className="lg:text-3xl text-2xl cursor-pointer block text-center text-white p-3 my-5 rounded-md bg-gradient-to-br from-gray-800/80 to-gray-900/80 hover:to-gray-900/90 backdrop-blur-sm duration-300">
                         My Works 
                 </motion.h1>
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
@@ -146,7 +146,7 @@ function EachWork({description,githubLink,img_url,usedLanguages,liveLink,name,op
           onClick={()=>setOpen(!open)}
           whileInView={{scale:[1.5,1]}}
           animate={{opacity:[0,1]}}
-          className="w-full py-5 px-2 rounded-md bg-gradient-to-br from-gray-700/50 to-gray-800/50 shadow-md shadow-gray-600 hover:shadow-xl duration-300"
+          className="w-full py-5 px-2 rounded-md bg-gradient-to-br from-gray-700/50 to-gray-800/50 shadow-md shadow-gray-600 hover:shadow-xl backdrop-blur-md duration-300"
         >
             <h1 className="text-xl text-center text-white">{name}</h1>
             <div className="w-[80%] h-fit rounded-md shadow-sm shadow-gray-200 mx-auto my-3">
