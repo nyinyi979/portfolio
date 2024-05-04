@@ -43,7 +43,7 @@ export default function Works(){
         githubLink: "https://github.com/nyinyi979/unistyles_components",
         liveLink: "https://unistyle-ui-kit.vercel.app/",
         usedLanguages: ["React native", "Unistyles", "Expo", "CLI",],
-        description: "Open source project alternative to shadcn/ui for react native!"},
+        description: "Open source project alternative to shadcn/ui for react native! CLI"},
 
         {name: "Weather App",
         date: "July 2023",
@@ -57,7 +57,7 @@ export default function Works(){
         date: "December 2023",
         img_url: UNI_UI,
         githubLink: "https://github.com/nyinyi979/unistyle-ui",
-        liveLink: "https://www.npmjs.com/package/uni-ui-kit",
+        liveLink: "https://unistyle-ui-kit.vercel.app/",
         usedLanguages: ["Javascript","Typescript","CLI-Color","Simple GIT","Yargs"],
         description: "Open source project alternative to shadcn/ui for react native!"},
 
@@ -67,7 +67,7 @@ export default function Works(){
         githubLink: "https://github.com/nyinyi979/animated-svgs",
         liveLink: "https://animated-svgs-rose.vercel.app/",
         usedLanguages: ["React","React native", "SVG(XML)", "Reanimated", "Framer motion",],
-        description: "Open source project alternative to shadcn/ui for react native!"},
+        description: "Animated SVGs available in react, react native and svg."},
 
         {name: "Music app",
         date: "March 2024",
