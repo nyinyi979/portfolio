@@ -146,6 +146,7 @@ function EachWork({description,githubLink,img_url,usedLanguages,liveLink,name,op
           onClick={()=>setOpen(!open)}
           whileInView={{scale:[1.5,1]}}
           animate={{opacity:[0,1]}}
+          viewport={{once:true}}
           className="w-full py-5 px-2 rounded-md bg-gradient-to-br from-gray-700/50 to-gray-800/50 shadow-md shadow-gray-600 hover:shadow-xl backdrop-blur-md duration-300"
         >
             <h1 className="text-xl text-center text-white">{name}</h1>
