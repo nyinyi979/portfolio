@@ -6,7 +6,7 @@ export default function Footer(){
     return(
         <motion.div 
           whileInView={{translateY:[40,0],scale:[.8,1]}}
-          id="skills" className="p-10 text-center" style={{ scaleX: scrollYProgress }}>
+          id="skills" className="p-5 text-center" style={{ scaleX: scrollYProgress }}>
             <motion.h1 
               className="lg:text-3xl text-2xl cursor-pointer block text-center text-white p-3 my-5 rounded-md bg-gradient-to-br from-black/80 to-gray-900/80 hover:to-black/90 backdrop-blur-sm duration-300"
             >
