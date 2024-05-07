@@ -16,7 +16,6 @@ import WEATHER_APP from "./image/weather_app.png"
 import ImageViewer from "./img_viewer";
 
 export default function Works(){
-    const [open, setOpen] = React.useState(false);
     const [imageOpen, setImageOpen] = React.useState<StaticImageData|"">("");
 
     const openImage = (img: StaticImageData) =>{
@@ -116,13 +115,12 @@ export default function Works(){
               whileInView={{translateY:[40,0],scale:[.8,1]}}
               id="works" className="p-10">
                 <motion.h1 
-                    onClick={()=>setOpen(!open)}
-                    className="lg:text-3xl text-2xl cursor-pointer block text-center text-white p-3 my-5 rounded-md bg-gradient-to-br from-gray-800/80 to-gray-900/80 hover:to-gray-900/90 backdrop-blur-sm duration-300">
+                    className="lg:text-3xl text-2xl cursor-pointer block text-center text-white p-3 my-5 rounded-md bg-gradient-to-br from-black/80 to-gray-900/80 hover:to-black/90 backdrop-blur-sm duration-300">
                         My Works 
                 </motion.h1>
-                <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+                <div className="flex flex-col gap-4">
                     {works.current.map((work)=>
-                        <EachWork open={open} setOpen={setOpen} key={work.name} openImage={openImage} {...work}/>
+                        <EachWork key={work.name} openImage={openImage} {...work}/>
                     )}
                 </div>
             </motion.div>
@@ -130,42 +128,47 @@ export default function Works(){
     )
 }
 
-function EachWork({description,githubLink,img_url,usedLanguages,liveLink,name,open,setOpen,openImage}:{name: string;
+function EachWork({description,date,githubLink,img_url,usedLanguages,liveLink,name,openImage}:{name: string;
     date: string;
     img_url: StaticImageData;
     githubLink: string;
     liveLink: string;
     usedLanguages: string[];
     description: string;
-    open: boolean,
-    setOpen: Dispatch<SetStateAction<boolean>>,
     openImage: (img: StaticImageData)=>void
 }){
+    const [open, setOpen] = React.useState(true);
     return(
         <motion.div 
           onClick={()=>setOpen(!open)}
           whileInView={{scale:[1.5,1]}}
           animate={{opacity:[0,1]}}
           viewport={{once:true}}
-          className="w-full py-5 px-2 rounded-md bg-gradient-to-br from-gray-700/50 to-gray-800/50 shadow-md shadow-gray-600 hover:shadow-xl backdrop-blur-md duration-300"
+          className="w-full py-5 px-2 rounded-md backdrop-blur-md duration-300 relative p-2 z-20 bg-black/30 h-full top-0 left-0 shadow-md shadow-black"
         >
-            <h1 className="text-xl text-center text-white">{name}</h1>
-            <div className="w-[80%] h-fit rounded-md shadow-sm shadow-gray-200 mx-auto my-3">
-                <Image onClick={(e)=>{e.stopPropagation();openImage(img_url)}} alt={img_url.src} src={img_url} className="bg-cover hover:scale-105 duration-300 rounded-md border border-gray-700 shadow-md"/>
+            <h1 className="text-xl text-white px-10">{name}</h1>
+            <div className="grid grid-cols-21 w-full my-3">
+                <div className="w-full h-fit rounded-md mx-auto">
+                    <Image onClick={(e)=>{e.stopPropagation();openImage(img_url)}} alt={img_url.src} src={img_url} className="bg-cover duration-300 rounded-md scale-95 hover:scale-[.96]"/>
+                </div>
+                <motion.div
+                    initial={{opacity:0}}
+                    animate={{opacity:open? 1 : 0}}
+                    style={{display:open? "block":"none"}}
+                    className="text-white my-3 xl:text-xl lg:text-lg"
+                >
+                    {description}
+                    <p className="lg:block hidden py-2">
+                        Created date - {date}
+                    </p>
+                </motion.div>
             </div>
-            <motion.div
-                initial={{opacity:0}}
-                animate={{opacity:open? 1 : 0}}
-                style={{display:open? "block":"none"}}
-                className="text-center text-white"
-            >
-                {description}
-            </motion.div>
+            <p className="text-gray-50">Used technology</p>
             <motion.div
                 initial={{scaleY:0}}
                 animate={{scaleY:open? 1 : 0}}
                 style={{display:open? "flex":"none"}}
-                className="flex flex-wrap md:justify-normal justify-center gap-3 my-2"
+                className="flex flex-wrap justify-normal gap-3 my-2"
             >
                 {usedLanguages.map((lang)=>
                     <div key={lang} className="border text-white hover:text-black border-cyan-300 hover:bg-cyan-300 duration-300 md:px-2 p-1 w-fit cursor-pointer">
@@ -173,9 +176,9 @@ function EachWork({description,githubLink,img_url,usedLanguages,liveLink,name,op
                     </div>
                 )}
             </motion.div>
-            <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 mb-2 mt-5 lg:pl-10">
-                <Link target="_blank" className="md:w-full w-[75%] mx-auto md:text-[18px] text-xs inline-block lg:py-2 p-1 py-[5px] text-center text-white bg-gradient-to-r hover:bg-gradient-to-l from-red-500 to-red-600 rounded-md hover:shadow-md hover:shadow-red-600 duration-300" href={githubLink} >Github</Link>
-                <Link target="_blank" className="md:w-full w-[75%] mx-auto md:text-[18px] text-xs inline-block lg:py-2 p-1 py-[5px] text-center text-black bg-gradient-to-r hover:bg-gradient-to-l from-cyan-400 to-cyan-500 rounded-md hover:shadow-md hover:shadow-cyan-600 duration-300" href={liveLink} >Live</Link>
+            <div className="flex flex-row gap-2 mb-2 mt-5 w-fit">
+                <Link target="_blank" className="w-40 h-fit mx-auto md:text-lg inline-block p-1 py-1 text-center text-white bg-gradient-to-r hover:bg-gradient-to-l from-red-500 to-red-600 rounded-md hover:shadow-md hover:shadow-red-600 duration-300" href={githubLink} >See it on Github!</Link>
+                <Link target="_blank" className="w-40 h-fit mx-auto md:text-lg inline-block p-1 py-1 text-center text-white bg-gradient-to-r hover:bg-gradient-to-l from-cyan-400 to-cyan-500 rounded-md hover:shadow-md hover:shadow-cyan-600 duration-300" href={liveLink} >See it Live!</Link>
             </div>
         </motion.div>
     )

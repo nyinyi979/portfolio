@@ -22,7 +22,7 @@ export default function Skills(){
               id="skills" className="p-10"
             >
                 <motion.h1 
-                    className="lg:text-3xl text-2xl block text-center text-white p-3 my-5 rounded-md bg-gradient-to-br from-gray-800/80 to-gray-900/80 duration-300"
+                    className="lg:text-3xl text-2xl cursor-pointer block text-center text-white p-3 my-5 rounded-md bg-gradient-to-br from-black/80 to-gray-900/80 hover:to-black/90 backdrop-blur-sm duration-300"
                 >
                     Skills (Have fun dragging)
                 </motion.h1>

@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function Name(){
     return(
         <>
-            <motion.div animate={{translateY:[-40,0],opacity:[0,1]}} className="sticky top-0 text-white shadow-sm shadow-gray-100 bg-black/30 px-4 py-5 z-[100] backdrop-blur-sm">
+            <motion.div animate={{translateY:[-40,0],opacity:[0,1]}} className="sticky top-0 text-white shadow-sm shadow-gray-100 bg-black/50 px-4 py-5 z-[100] backdrop-blur-sm">
                 <Link 
                   href={"/"}
                   className="p-2 lg:text-2xl text-xl border border-gray-400 w-fit hover:text-black hover:bg-white duration-300 cursor-pointer active:scale-95">
