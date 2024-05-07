@@ -112,7 +112,6 @@ export default function Works(){
         <>
             <ImageViewer closeImage={closeImage} imageData={imageOpen}/>
             <motion.div 
-              whileInView={{translateY:[40,0],scale:[.8,1]}}
               id="works" className="p-5">
                 <motion.h1 
                     className="lg:text-3xl text-2xl cursor-pointer block text-center text-white p-3 my-5 rounded-md bg-gradient-to-br from-black/80 to-gray-900/80 hover:to-black/90 backdrop-blur-sm duration-300">
@@ -159,7 +158,7 @@ function EachWork({description,date,githubLink,img_url,usedLanguages,liveLink,na
                 >
                     {description}
                     <p className="lg:block hidden py-2">
-                        Created date - {date}
+                        Finshed date - {date}
                     </p>
                 </motion.div>
             </div>
