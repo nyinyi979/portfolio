@@ -1,6 +1,6 @@
 "use client"
 import Image, { StaticImageData } from "next/image";
-import React, { Dispatch, SetStateAction } from "react"
+import React from "react"
 import { motion } from "framer-motion";
 import Link from "next/link";
 import TCDL from "./image/tcdl.png"
