@@ -5,5 +5,25 @@
 body{
     width: 100%;
     max-width: 100%;
-    background-color: rgb(22, 22, 22);
+    background-image: -webkit-linear-gradient(to right, #141e30, #243b55); /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(to right, #141e30, #243b55); 
+}
+.deep{
+    background-image: -webkit-linear-gradient(to left, #141e30, #18314d);  /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(to left, #141e30, #18314d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    transition: all .3s;
+}
+.deep:hover{
+    box-shadow: 2px 2px 20px 10px #10182756;
+    transition: all .3s;
+}
+.header{
+    background-image: -webkit-linear-gradient(to bottom, #101827b2, #10182777);  /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(to bottom, #1018279e, #10182777); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 5px 5px 20px 10px #10182756, 3px 3px 10px 10px #10182799;
+}
+.work{
+    background-image: -webkit-linear-gradient(to right, #0f1624, #1d3148); /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(to right, #0f1624, #1d3148); 
+    box-shadow: 1px 1px 5px 1px #00042897;
 }

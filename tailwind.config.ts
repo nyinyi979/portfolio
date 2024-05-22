@@ -14,7 +14,8 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       gridTemplateColumns: {
-        21: "2fr 1fr"
+        21: "2fr 1fr",
+        12: "1.3fr 2fr"
       }
     },
   },
