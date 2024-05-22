@@ -25,7 +25,7 @@ export default function RootLayout({
       <meta name="msapplication-TileColor" content="#2b5797" />
       <meta name="msapplication-config" content="./browserconfig.xml" />
       <meta name="theme-color" content="#ffffff"></meta>
-      <body className={`${inter.className}`}>{children}</body>
+      <body className={`${inter.className} overflow-x-hidden`}>{children}</body>
     </html>
   );
 }
