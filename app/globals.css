@@ -9,8 +9,9 @@ body{
     background-image: linear-gradient(to right, #141e30, #243b55); 
 }
 .deep{
-    background-image: -webkit-linear-gradient(to left, #141e30, #18314d);  /* Chrome 10-25, Safari 5.1-6 */
-    background-image: linear-gradient(to left, #141e30, #18314d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: -webkit-linear-gradient(to left, #172339, #112a47);  /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(to left, #172339, #112a47); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 1px 1px 20px 3px #10182756;
     transition: all .3s;
 }
 .deep:hover{
@@ -23,7 +24,10 @@ body{
     box-shadow: 5px 5px 20px 10px #10182756, 3px 3px 10px 10px #10182799;
 }
 .work{
-    background-image: -webkit-linear-gradient(to right, #0f1624, #1d3148); /* Chrome 10-25, Safari 5.1-6 */
-    background-image: linear-gradient(to right, #0f1624, #1d3148); 
+    background-image: -webkit-linear-gradient(to right, #0f1624ae, #172a3f); /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(to right, #0f1624ae, #172a3f); 
     box-shadow: 1px 1px 5px 1px #00042897;
+}
+.circle{
+    box-shadow: 100px 100px 50px 30px #4d62909e;
 }

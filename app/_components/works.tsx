@@ -118,7 +118,7 @@ export default function Works(){
                 >
                     My Works 
                 </motion.h1>
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-5">
                     {works.current.map((work)=>
                         <EachWork key={work.name} openImage={openImage} {...work}/>
                     )}
@@ -141,12 +141,12 @@ function EachWork({description,date,githubLink,img_url,usedLanguages,liveLink,na
     return(
         <motion.div 
           onClick={()=>setOpen(!open)}
-          whileInView={{scale:[1.2,1]}}
+          whileInView={{scale:[1.3,1]}}
           animate={{opacity:[0,1]}}
           viewport={{once:true}}
           className="w-full py-2 px-5 rounded-md backdrop-blur-md duration-300 relative p-2 z-20 work h-full top-0 left-0 my-2"
         >
-            <h1 className="text-2xl text-white px-10 my-3">{name}</h1>
+            <h1 className="text-2xl text-white px-3 my-3 underline underline-offset-4">{name}</h1>
             <div className="grid grid-cols-12 gap-4 w-full my-3">
                 <div className="w-full h-fit rounded-md mx-auto">
                     <Image onClick={(e)=>{e.stopPropagation();openImage(img_url)}} alt={img_url.src} src={img_url} className="bg-cover duration-300 rounded-md scale-95 hover:scale-[.96]"/>
@@ -155,7 +155,7 @@ function EachWork({description,date,githubLink,img_url,usedLanguages,liveLink,na
                     initial={{opacity:0}}
                     animate={{opacity:open? 1 : 0}}
                     style={{display:open? "block":"none"}}
-                    className="text-white my-3 xl:text-xl lg:text-lg"
+                    className="text-white my-3 lg:text-lg"
                 >
                     {description}
                     <p className="lg:block hidden py-2">
@@ -177,8 +177,8 @@ function EachWork({description,date,githubLink,img_url,usedLanguages,liveLink,na
                 )}
             </motion.div>
             <div className="flex flex-row gap-2 mb-2 mt-5 w-fit">
-                <Link target="_blank" className="w-40 h-fit mx-auto md:text-lg inline-block p-1 py-1 text-center text-white bg-gradient-to-r from-red-500 to-red-600 hover:shadow-md hover:shadow-red-600 duration-300" href={githubLink} >See it on Github!</Link>
-                <Link target="_blank" className="w-40 h-fit mx-auto md:text-lg inline-block p-1 py-1 text-center text-white bg-gradient-to-r from-cyan-400 to-cyan-500 hover:shadow-md hover:shadow-cyan-600 duration-300" href={liveLink} >See it Live!</Link>
+                <Link target="_blank" className="w-40 h-fit mx-auto inline-block p-1 py-1 text-center text-white bg-gradient-to-r from-red-500 to-red-600 hover:shadow-md hover:shadow-red-600 duration-300" href={githubLink} >See it on Github!</Link>
+                <Link target="_blank" className="w-40 h-fit mx-auto inline-block p-1 py-1 text-center text-white bg-gradient-to-r from-cyan-400 to-cyan-500 hover:shadow-md hover:shadow-cyan-600 duration-300" href={liveLink} >See it Live!</Link>
             </div>
         </motion.div>
     )
