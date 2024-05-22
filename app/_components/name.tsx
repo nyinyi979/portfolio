@@ -7,7 +7,7 @@ export default function Name(){
     let [pos, setPos] = React.useState({x:200,y:400})
     React.useEffect(()=>{
         document.getElementById("name_box")!.addEventListener("mousemove",(ev)=>{
-            setPos({x:ev.screenX-100, y: ev.screenY-200})
+            setPos({x:ev.screenX-250, y: ev.screenY-200})
         })
     })            
     return(
