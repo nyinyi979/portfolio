@@ -28,11 +28,11 @@ export default function Name(){
                     className={box}>
                         Works
                     </Link>
-                    <Link 
+                    {/* <Link 
                     href={"/#ui"}
                     className={box}>
                         UI
-                    </Link>
+                    </Link> */}
                     <Link 
                     href={"/#skills"}
                     className={box}>
