@@ -11,7 +11,7 @@ export default function Name(){
         })
     })            
     return(
-        <div className="relative" id="name_box">
+        <div className="relative overflow-hidden" id="name_box">
             <motion.div
                 style={{left:pos.x, top:pos.y}}
                 className="w-[500px] h-[500px] absolute circle bg-gradient-to-tr from-[#394a6dbd] to-[#374c789e] -z-10 duration-150 blur-[200px] opacity-70 rounded-full"
