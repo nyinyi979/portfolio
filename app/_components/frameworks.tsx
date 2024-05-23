@@ -22,9 +22,10 @@ export default function Skills(){
               id="skills" className="p-5"
             >
                 <motion.h1 
+                    onClick={()=>alert("Have fun dragging")}
                     className="lg:text-3xl text-2xl cursor-pointer block text-center text-white p-3 my-5 rounded-md deep backdrop-blur-sm duration-300"
                 >
-                    Skills (Have fun dragging)
+                    Skills 
                 </motion.h1>
                 <h2 className="my-2 text-2xl text-underline text-blue-500 hover:text-blue-600 duration-300">Front end</h2>
                 <div className="flex flex-wrap gap-5">

@@ -46,7 +46,7 @@ export default function Name(){
                 whileInView={{translateY:[40,0],translateX:[-20,0,20,0],scale:[.8,1]}}
                 >
                     <Link href={"/#works"} id="name" className="block text-4xl text-center text-white py-40 my-32">
-                        I am <span className="underline text-cyan-500 underline-offset-8 hover:underline-offset-[20px] duration-300 cursor-pointer">a web/app developer.</span>      
+                        I am <span onClick={()=>alert("Click on each heading for guides!")} className="underline text-cyan-500 underline-offset-8 hover:underline-offset-[20px] duration-300 cursor-pointer">a web/app developer.</span>      
                     </Link>
                 </motion.div>
             </div>

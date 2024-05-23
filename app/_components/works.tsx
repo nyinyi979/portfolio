@@ -114,6 +114,7 @@ export default function Works(){
             <motion.div 
               id="works" className="p-5">
                 <motion.h1 
+                    onClick={()=>alert("Click the box of each project:)")}
                     className="lg:text-3xl text-2xl cursor-pointer block text-center text-white p-3 my-5 rounded-md deep backdrop-blur-sm duration-300"
                 >
                     My Works 
@@ -138,23 +139,37 @@ function EachWork({description,date,githubLink,img_url,usedLanguages,liveLink,na
     openImage: (img: StaticImageData)=>void
 }){
     const [open, setOpen] = React.useState(true);
+    const [display, setDisplay] = React.useState(true);
+    const animate = () =>{
+        if(open){
+            setOpen(false);
+            setTimeout(()=>setDisplay(false),300)
+        } else {
+            setDisplay(true);
+            setOpen(true)
+        }
+    }
     return(
         <motion.div 
-          onClick={()=>setOpen(!open)}
+          onClick={()=>animate()}
           whileInView={{scale:[1.3,1]}}
           animate={{opacity:[0,1]}}
           viewport={{once:true}}
           className="w-full py-2 px-5 rounded-md backdrop-blur-md duration-300 relative p-2 z-20 work h-full top-0 left-0 my-2"
         >
             <h1 className="text-2xl text-white px-3 my-3 underline underline-offset-4">{name}</h1>
-            <div className="grid grid-cols-12 gap-4 w-full my-3">
+            <motion.div 
+                animate={{gridTemplateColumns: display? '1.3fr 2fr' : '2.5fr 1fr'}}
+                layout="size"
+                className={`grid gap-4 w-full my-3`}
+            >
                 <div className="w-full h-fit rounded-md mx-auto">
                     <Image onClick={(e)=>{e.stopPropagation();openImage(img_url)}} alt={img_url.src} src={img_url} className="bg-cover duration-300 rounded-md scale-95 hover:scale-[.96]"/>
                 </div>
                 <motion.div
                     initial={{opacity:0}}
                     animate={{opacity:open? 1 : 0}}
-                    style={{display:open? "block":"none"}}
+                    style={{display: display? "block" : "none"}}
                     className="text-white my-3 lg:text-lg"
                 >
                     {description}
@@ -162,12 +177,12 @@ function EachWork({description,date,githubLink,img_url,usedLanguages,liveLink,na
                         Finshed date - {date}
                     </p>
                 </motion.div>
-            </div>
+            </motion.div>
             <p className="text-gray-50">Used technology</p>
             <motion.div
                 initial={{scaleY:0}}
                 animate={{scaleY:open? 1 : 0}}
-                style={{display:open? "flex":"none"}}
+                style={{display: display? "flex" : "none"}}
                 className="flex flex-wrap justify-normal gap-3 my-2"
             >
                 {usedLanguages.map((lang)=>
