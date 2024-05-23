@@ -11,11 +11,7 @@ export default function Name(){
         })
     })            
     return(
-        <div className="relative overflow-hidden" id="name_box">
-            <motion.div
-                style={{left:pos.x, top:pos.y}}
-                className="w-[500px] h-[500px] absolute circle bg-gradient-to-tr from-[#394a6dbd] to-[#374c789e] -z-10 duration-150 blur-[200px] opacity-70 rounded-full"
-            />
+        <>
             <motion.div animate={{translateY:[-40,0],opacity:[0,1]}} className="sticky top-0 text-white header px-4 py-5 z-[100] backdrop-blur-sm">
                 <Link 
                   href={"/"}
@@ -40,13 +36,20 @@ export default function Name(){
                     </Link>
                 </div>
             </motion.div>
-            <motion.div
-              whileInView={{translateY:[40,0],translateX:[-20,0,20,0],scale:[.8,1]}}
-            >
-                <Link href={"/#works"} id="name" className="block text-4xl text-center text-white py-40 my-32">
-                    I am <span className="underline text-cyan-500 underline-offset-8 hover:underline-offset-[20px] duration-300 cursor-pointer">a web/app developer.</span>      
-                </Link>
-            </motion.div>
-        </div>
+            <div className="relative overflow-hidden" id="name_box">
+                <motion.div
+                    style={{left:pos.x, top:pos.y}}
+                    className="w-[500px] h-[500px] absolute circle bg-gradient-to-tr from-[#394a6dbd] to-[#374c789e] -z-10 duration-150 blur-[200px] opacity-70 rounded-full"
+                />
+                
+                <motion.div
+                whileInView={{translateY:[40,0],translateX:[-20,0,20,0],scale:[.8,1]}}
+                >
+                    <Link href={"/#works"} id="name" className="block text-4xl text-center text-white py-40 my-32">
+                        I am <span className="underline text-cyan-500 underline-offset-8 hover:underline-offset-[20px] duration-300 cursor-pointer">a web/app developer.</span>      
+                    </Link>
+                </motion.div>
+            </div>
+        </>
     )
 }
