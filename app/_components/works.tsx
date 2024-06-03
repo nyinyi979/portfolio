@@ -113,12 +113,12 @@ export default function Works(){
             <ImageViewer closeImage={closeImage} imageData={imageOpen}/>
             <motion.div 
               id="works" className="p-5">
-                <motion.h1 
+                <motion.button 
                     onClick={()=>alert("Click the box of each project:)")}
-                    className="lg:text-3xl text-2xl cursor-pointer block text-center text-white p-3 my-5 rounded-md deep backdrop-blur-sm duration-300"
+                    className="lg:text-3xl text-2xl block w-full text-center text-white p-3 my-5 rounded-md deep backdrop-blur-sm duration-300"
                 >
                     My Works 
-                </motion.h1>
+                </motion.button>
                 <div className="flex flex-col gap-5">
                     {works.current.map((work)=>
                         <EachWork key={work.name} openImage={openImage} {...work}/>
@@ -186,7 +186,7 @@ function EachWork({description,date,githubLink,img_url,usedLanguages,liveLink,na
                 className="flex flex-wrap justify-normal gap-3 my-2"
             >
                 {usedLanguages.map((lang)=>
-                    <div key={lang} className="border text-white hover:text-black border-cyan-300 hover:bg-cyan-300 duration-300 md:px-2 p-1 w-fit cursor-pointer">
+                    <div key={lang} className="border text-white hover:text-black border-cyan-300 hover:bg-cyan-300 duration-300 md:px-2 p-1 w-fit  ">
                         {lang}
                     </div>
                 )}

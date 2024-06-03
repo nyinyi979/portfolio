@@ -9,11 +9,11 @@ export default function Skills(){
         frameworks: ["NextJS","Expo","Framer motion","SwiperJS","ChartJS"],
         others: ["Photoshop","Figma","Github"]
     })
-    const frontEle = "w-fit px-3 py-2 m-2 bg-blue-100 shadow shadow-md shadow-blue-300 hover:bg-blue-200 hover:rounded-md cursor-pointer duration-300";
-    const backEle = "w-fit px-3 py-2 m-2 bg-cyan-100 shadow shadow-md shadow-cyan-300 hover:bg-cyan-200 hover:rounded-md cursor-pointer duration-300";
-    const dataEle = "w-fit px-3 py-2 m-2 bg-amber-100 shadow shadow-md shadow-amber-300 hover:bg-amber-200 hover:rounded-md cursor-pointer duration-300";
-    const frameEle = "w-fit px-3 py-2 m-2 bg-emerald-100 shadow shadow-md shadow-emerald-300 hover:bg-emerald-200 hover:rounded-md cursor-pointer duration-300";
-    const otherEle = "w-fit px-3 py-2 m-2 bg-purple-100 shadow shadow-md shadow-purple-300 hover:bg-purple-200 hover:rounded-md cursor-pointer duration-300";
+    const frontEle = "w-fit px-3 py-2 m-2 bg-blue-100 shadow shadow-md shadow-blue-300 hover:bg-blue-200 hover:rounded-md duration-300";
+    const backEle = "w-fit px-3 py-2 m-2 bg-cyan-100 shadow shadow-md shadow-cyan-300 hover:bg-cyan-200 hover:rounded-md  duration-300";
+    const dataEle = "w-fit px-3 py-2 m-2 bg-amber-100 shadow shadow-md shadow-amber-300 hover:bg-amber-200 hover:rounded-md  duration-300";
+    const frameEle = "w-fit px-3 py-2 m-2 bg-emerald-100 shadow shadow-md shadow-emerald-300 hover:bg-emerald-200 hover:rounded-md duration-300";
+    const otherEle = "w-fit px-3 py-2 m-2 bg-purple-100 shadow shadow-md shadow-purple-300 hover:bg-purple-200 hover:rounded-md duration-300";
 
     return(
         <>
@@ -21,12 +21,12 @@ export default function Skills(){
               whileInView={{translateY:[40,0],scale:[.8,1]}}
               id="skills" className="p-5"
             >
-                <motion.h1 
+                <motion.button 
                     onClick={()=>alert("Have fun dragging")}
-                    className="lg:text-3xl text-2xl cursor-pointer block text-center text-white p-3 my-5 rounded-md deep backdrop-blur-sm duration-300"
+                    className="lg:text-3xl text-2xl w-full block text-center text-white p-3 my-5 rounded-md deep backdrop-blur-sm duration-300"
                 >
                     Skills 
-                </motion.h1>
+                </motion.button>
                 <h2 className="my-2 text-2xl text-underline text-blue-500 hover:text-blue-600 duration-300">Front end</h2>
                 <div className="flex flex-wrap gap-5">
                     {skills.current.frontEnd.map((a)=>

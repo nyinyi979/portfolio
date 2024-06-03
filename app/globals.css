@@ -7,6 +7,10 @@ body{
     max-width: 100%;
     background-image: -webkit-linear-gradient(to right, #141e30, #243b55); /* Chrome 10-25, Safari 5.1-6 */
     background-image: linear-gradient(to right, #141e30, #243b55); 
+    cursor: url(/cursor.png) , default !important;
+}
+a, button{
+    cursor: url(/cursor-fill.png) , default !important;
 }
 .deep{
     background-image: -webkit-linear-gradient(to left, #172339, #112a47);  /* Chrome 10-25, Safari 5.1-6 */

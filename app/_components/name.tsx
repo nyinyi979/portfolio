@@ -3,7 +3,7 @@ import {motion} from "framer-motion"
 import Link from "next/link"
 import React from "react"
 export default function Name(){
-    let box = "p-1 lg:text-xl text-lg border border-gray-400 lg:w-32 w-20 text-center hover:text-black hover:bg-white duration-300 cursor-pointer active:scale-95"
+    let box = "p-1 lg:text-xl text-lg border border-gray-400 lg:w-32 w-20 text-center hover:text-black hover:bg-white duration-300   active:scale-95"
     let [pos, setPos] = React.useState({x:200,y:400})
     React.useEffect(()=>{
         document.getElementById("name_box")!.addEventListener("mousemove",(ev)=>{
@@ -15,7 +15,7 @@ export default function Name(){
             <motion.div animate={{translateY:[-40,0],opacity:[0,1]}} className="sticky top-0 text-white header px-4 py-5 z-[100] backdrop-blur-sm">
                 <Link 
                   href={"/"}
-                  className="p-2 lg:text-2xl text-xl border border-gray-400 w-fit hover:text-black hover:bg-white duration-300 cursor-pointer active:scale-95">
+                  className="p-2 lg:text-2xl text-xl border border-gray-400 w-fit hover:text-black hover:bg-white duration-300 active:scale-95">
                     Portfolio
                 </Link>
                 <div className="float-right flex gap-4">
@@ -46,7 +46,7 @@ export default function Name(){
                 whileInView={{translateY:[40,0],translateX:[-20,0,20,0],scale:[.8,1]}}
                 >
                     <Link href={"/#works"} id="name" className="block text-4xl text-center text-white py-40 my-32">
-                        I am <span onClick={()=>alert("Click on each heading for guides!")} className="underline text-cyan-500 underline-offset-8 hover:underline-offset-[20px] duration-300 cursor-pointer">a web/app developer.</span>      
+                        I am <span onClick={()=>alert("Click on each heading for guides!")} className="underline text-cyan-500 underline-offset-8 hover:underline-offset-[20px] duration-300  ">a web/app developer.</span>      
                     </Link>
                 </motion.div>
             </div>
