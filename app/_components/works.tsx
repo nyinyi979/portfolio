@@ -11,6 +11,7 @@ import MUSIC_APP from "./image/music_app.png"
 import BLOG_APP from "./image/blog_app.png"
 import BLOG_APP_SERVER from "./image/blog_app_server.png"
 import UI_MOCKUP from "./image/ui_mockup.png"
+import SHRE from "./image/shre.png"
 import CHARTS from "./image/charts.png"
 import WEATHER_APP from "./image/weather_app.png"
 import ImageViewer from "./img_viewer";
@@ -107,6 +108,14 @@ export default function Works(){
         liveLink: "https://ui-mockup-seven.vercel.app/",
         usedLanguages: ["React","NextJS","Image optimisation","Tailwind","DaisyUI","AnimeJS"],
         description: "UI Mockup app with a lot of pictures. Focused on animation"},
+
+        {name: "Business model mockup",
+        date: "May 2024",
+        img_url: SHRE,
+        githubLink: "https://github.com/nyinyi979/shre-test",
+        liveLink: "https://shre.vercel.app/",
+        usedLanguages: ["React","NextJS","Plain CSS"],
+        description: "A sample ui design created only using css animation and transitions."},
     ])
     return(
         <>
@@ -152,7 +161,7 @@ function EachWork({description,date,githubLink,img_url,usedLanguages,liveLink,na
     return(
         <motion.div 
           onClick={()=>animate()}
-          whileInView={{scale:[1.3,1]}}
+          whileInView={{translateY:[200,0],scale:[.8,1]}}
           animate={{opacity:[0,1]}}
           viewport={{once:true}}
           className="w-full py-2 px-5 rounded-md backdrop-blur-md duration-300 relative p-2 z-20 work h-full top-0 left-0 my-2"
