@@ -3,7 +3,7 @@ import React from "react"
 import {motion} from "framer-motion";
 export default function Skills(){
     const skills = React.useRef({
-        frontEnd: ["HTML","CSS","SCSS","Javascript","Typescript","React","React native"],
+        frontEnd: ["HTML","CSS","SCSS","Tailwind","Bootstrap","DaisyUI","Javascript","Typescript","React","React native"],
         backEnd: ["Node","Bun","Express","Fastify","Elysia"],
         data: ["MySQL","Postgres","MongoDB","PrismaORM","Redux","Redux Persist","Tanstack Query","RN Async Storage","Local Storage"],
         frameworks: ["NextJS","Expo","Framer motion","SwiperJS","ChartJS"],
