@@ -2,36 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    width: 100%;
-    max-width: 100%;
-    background-image: -webkit-linear-gradient(to right, #141e30, #243b55); /* Chrome 10-25, Safari 5.1-6 */
-    background-image: linear-gradient(to right, #141e30, #243b55); 
-    cursor: url(/cursor.png) , default !important;
+body {
+  width: 100%;
+  max-width: 100%;
+  background-image: -webkit-linear-gradient(
+    to right,
+    #2d2d2d,
+    #4d4d4d
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background-image: linear-gradient(to right, #2d2d2d, #4d4d4d);
+  cursor: url(/cursor.png), default !important;
 }
-a, button{
-    cursor: url(/cursor-fill.png) , default !important;
+a,
+button {
+  cursor: url(/cursor-fill.png), default !important;
 }
-.deep{
-    background-image: -webkit-linear-gradient(to left, #172339, #112a47);  /* Chrome 10-25, Safari 5.1-6 */
-    background-image: linear-gradient(to left, #172339, #112a47); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    box-shadow: 1px 1px 20px 3px #10182756;
-    transition: all .3s;
+.deep {
+  background-color: #1f1f1f;
+  box-shadow: 1px 1px 20px 3px #2b2b2b56;
+  transition: all 0.3s;
+  font-weight: 500;
 }
-.deep:hover{
-    box-shadow: 2px 2px 20px 10px #10182756;
-    transition: all .3s;
+.deep:hover {
+  box-shadow: 2px 2px 20px 10px rgba(31, 31, 31, 0.337), 0px 0px 40px 3px rgba(142, 142, 142, 0.337);
+  transition: all 0.3s;
 }
-.header{
-    background-image: -webkit-linear-gradient(to bottom, #101827b2, #10182777);  /* Chrome 10-25, Safari 5.1-6 */
-    background-image: linear-gradient(to bottom, #1018279e, #10182777); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    box-shadow: 5px 5px 20px 10px #10182756, 3px 3px 10px 10px #10182799;
+.header {
+  background-image: -webkit-linear-gradient(
+    to bottom,
+    #242424b2,
+    #1a1a1a77
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background-image: linear-gradient(
+    to bottom,
+    #242424b2,
+    #1a1a1a77
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow:
+    0px 0px 20px 10px #20202056,
+    3px 3px 10px 10px #21212199;
 }
-.work{
-    background-image: -webkit-linear-gradient(to right, #0f1624ae, #172a3f); /* Chrome 10-25, Safari 5.1-6 */
-    background-image: linear-gradient(to right, #0f1624ae, #172a3f); 
-    box-shadow: 1px 1px 5px 1px #00042897;
+.work {
+  background-image: -webkit-linear-gradient(
+    to right,
+    #1c1c1cae,
+    #2f2f2f
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background-image: linear-gradient(to right, #1c1c1cae, #2f2f2f);
+  box-shadow: 1px 1px 5px 1px #15151597;
 }
-.circle{
-    box-shadow: 100px 100px 50px 30px #4d62909e;
+.circle {
+  box-shadow: 100px 100px 50px 30px #5c5c5c9e;
 }

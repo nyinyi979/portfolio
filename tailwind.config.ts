@@ -15,8 +15,8 @@ const config: Config = {
       },
       gridTemplateColumns: {
         21: "2fr 1fr",
-        12: "1.3fr 2fr"
-      }
+        12: "1.3fr 2fr",
+      },
     },
   },
   plugins: [],
