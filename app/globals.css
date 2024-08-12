@@ -49,8 +49,21 @@ button {
     #2f2f2f
   ); /* Chrome 10-25, Safari 5.1-6 */
   background-image: linear-gradient(to right, #1c1c1cae, #2f2f2f);
-  box-shadow: 1px 1px 5px 1px #15151597;
+  box-shadow: 1px 1px 50px 1px #1515156a;
 }
 .circle {
   box-shadow: 100px 100px 50px 30px #5c5c5c9e;
+}
+.half-grid{
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.full-grid{
+  grid-template-columns: 2fr 0fr;
+}
+@media screen and (min-width:768px) {
+  .half-grid {
+    grid-template-columns: 1.8fr 2fr;
+    gap: 16px;
+  }
 }

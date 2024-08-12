@@ -17,6 +17,9 @@ const config: Config = {
         21: "2fr 1fr",
         12: "1.3fr 2fr",
       },
+      boxShadow:{
+        work: "0 0 40px 2px #000000e"
+      }
     },
   },
   plugins: [],

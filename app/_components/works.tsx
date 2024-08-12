@@ -1,13 +1,15 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import TCDL from "./image/tcdl.png";
 import UNI_UI from "./image/uni_ui.png";
 import UNI_UI_CLI from "./image/uni_ui_cli.png";
 import ANIMATED_SVG from "./image/animated_svg.png";
 import MUSIC_APP from "./image/music_app.png";
+import MUSIC from "./image/music-app.png"
+import RESPONSIVE from "./image/responsive.png"
 import BLOG_APP from "./image/blog_app.png";
 import BLOG_APP_SERVER from "./image/blog_app_server.png";
 import UI_MOCKUP from "./image/ui_mockup.png";
@@ -111,7 +113,6 @@ export default function Works() {
       description:
         "Music app prototype developed for cross platform(The project was cancelled after the prototype)",
     },
-
     {
       name: "Blog app",
       date: "August 2023",
@@ -184,7 +185,6 @@ export default function Works() {
       ],
       description: "UI Mockup app with a lot of pictures. Focused on animation",
     },
-
     {
       name: "Business model mockup",
       date: "May 2024",
@@ -194,6 +194,26 @@ export default function Works() {
       usedLanguages: ["React", "NextJS", "Plain CSS"],
       description:
         "A sample ui design created only using css animation and transitions.",
+    },
+    {
+      name: "Responsive layout",
+      date: "July 2024",
+      img_url: RESPONSIVE,
+      githubLink: "https://github.com/nyinyi979/responsive-layout",
+      liveLink: "https://responsive-layout-puce.vercel.app/",
+      usedLanguages: ["React", "Plain CSS"],
+      description:
+        "A simple responsive web page.",
+    },
+    {
+      name: "Music API Integration",
+      date: "July 2024",
+      img_url: MUSIC,
+      githubLink: "https://github.com/nyinyi979/music-app",
+      liveLink: "https://music-app-cyan-five.vercel.app/",
+      usedLanguages: ["React", "Plain CSS", "React router"],
+      description:
+        "Music api integration for few pages of the website.(Note that, some pages might not work at al)",
     },
   ]);
   return (
@@ -252,15 +272,15 @@ function EachWork({
       whileInView={{ translateY: [200, 0], scale: [0.8, 1] }}
       animate={{ opacity: [0, 1] }}
       viewport={{ once: true }}
-      className="w-full py-2 px-5 rounded-md backdrop-blur-md duration-300 relative p-2 z-20 work h-full top-0 left-0 my-2"
+      className="w-full pt-2 pb-3 px-5 rounded-md backdrop-blur-md duration-300 relative p-2 z-20 work h-full top-0 left-0 my-2"
     >
       <h1 className="font-bold text-2xl text-white px-3 my-3 underline underline-offset-[8px] hover:underline-offset-[10px] duration-300">
         {name}
       </h1>
       <motion.div
-        animate={{ gridTemplateColumns: display ? "1.3fr 2fr" : "2.5fr 1fr" }}
+        animate={{ gridTemplateColumns: display ? "1.8fr 2fr" : "2fr 0fr" }}
         layout="size"
-        className={`grid gap-4 w-full my-3`}
+        className={`grid md:gap-4 gap-2 w-full my-3`}
       >
         <div className="w-full h-fit rounded-md mx-auto">
           <Image
@@ -277,28 +297,38 @@ function EachWork({
           initial={{ opacity: 0 }}
           animate={{ opacity: open ? 1 : 0 }}
           style={{ display: display ? "block" : "none" }}
-          className="text-white font-medium my-3 lg:text-lg"
+          className="md:w-[70%] w-[100%] text-white font-medium my-3 lg:text-lg"
         >
           {description}
-          <p className="lg:block hidden py-2">Finshed date - {date}</p>
         </motion.div>
       </motion.div>
-      <p className="text-gray-50">Used technology</p>
-      <motion.div
-        initial={{ scaleY: 0 }}
-        animate={{ scaleY: open ? 1 : 0 }}
-        style={{ display: display ? "flex" : "none" }}
-        className="flex flex-wrap justify-normal gap-3 my-2"
-      >
-        {usedLanguages.map((lang) => (
-          <div
-            key={lang}
-            className="border text-white font-medium hover:text-black border-cyan-300 hover:bg-cyan-300 duration-300 md:px-2 p-1 w-fit  "
-          >
-            {lang}
-          </div>
-        ))}
-      </motion.div>
+      <AnimatePresence>
+        {open&&<>
+        <motion.p
+          initial={{ height: "fit-content", opacity: 1 }}
+          animate={{ height: "fit-content", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          className="text-gray-50"
+        >
+          Used technology
+        </motion.p>
+        <motion.div
+          initial={{ height: "fit-content", opacity: 1 }}
+          animate={{ height: "fit-content", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          className="flex flex-wrap justify-normal gap-3 my-2"
+        >
+          {usedLanguages.map((lang) => (
+            <div
+              key={lang}
+              className="border text-white font-medium hover:text-black border-cyan-300 hover:bg-cyan-300 duration-300 md:px-2 p-1 w-fit  "
+            >
+              {lang}
+            </div>
+          ))}
+        </motion.div>
+        </>}
+      </AnimatePresence>
       <div className="flex flex-row gap-2 mb-2 mt-5 w-fit">
         <Link
           target="_blank"
