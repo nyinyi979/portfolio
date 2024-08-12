@@ -35,7 +35,7 @@ export default function Footer() {
         </Link>
         <Link
           className="w-full flex justify-center gap-5 p-4 bg-black/30 hover:bg-black/40 font-bold text-white hover:shadow-lg shadow-black/80 duration-300"
-          href={"mailto:nyinyi095062687@gmail.com"}
+          href={"mailto:nyinyi07.dev@gmail.com"}
         >
         <Image 
           src={Mail}
